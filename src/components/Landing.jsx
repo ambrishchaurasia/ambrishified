@@ -59,7 +59,7 @@ const Landing = () => {
             <motion.img
               src={profile}
               alt="Ambrish"
-className="w-80 h-80 object-cover rounded-full"
+className="w-60 h-60 object-cover rounded-full"
 style={{
   border: "3px dashed #d94d62",
   padding: "6px",
@@ -139,7 +139,7 @@ style={{
               href={video}
               className="text-sm text-gray-500 hover:text-yellow-400 transition duration-300 tracking-wide py-7 glow-animate"
             >
-A personal favorite edit ♡            </a>
+            A personal favorite edit ♡            </a>
           </div>
 
           {/* RIGHT */}
