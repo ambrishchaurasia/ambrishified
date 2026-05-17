@@ -1,77 +1,160 @@
 import React, { useState } from "react"
+import { Menu, X } from "lucide-react"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 w-full bg-white border-b border-gray-200 z-50">
-      <div className="max-w-5xl mx-auto flex justify-between items-center px-6 py-4">
-        
-        {/* Logo */}
-        <h1 className="text-lg font-semibold text-gray-900 tracking-tight">
-          Ambrish
+    <nav
+      className="fixed top-0 w-full z-50 
+      bg-white/70 backdrop-blur-xl border-b border-gray-100"
+    >
+
+      <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-5">
+
+        {/* LOGO */}
+        <h1
+          className="text-xl italic tracking-wide"
+          style={{
+            fontFamily: '"Times New Roman", Times, serif',
+            color: "#d94d62",
+          }}
+        >
+          ambrishified
         </h1>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex space-x-8 text-sm text-gray-600">
-          <a href="#development" className="hover:text-gray-900 transition">Projects</a>
-          <a href="#dsa" className="hover:text-gray-900 transition">DSA</a>
-          <a href="#education" className="hover:text-gray-900 transition">Education</a>
-          <a href="#other" className="hover:text-gray-900 transition">Hobbies</a>
+        {/* DESKTOP LINKS */}
+        <div className="hidden md:flex items-center gap-10 text-sm text-gray-500">
 
-          <a 
-            href="/Resume-AmbrishChaurasiya.pdf"
+          <a
+            href="#home"
+            className="hover:text-black transition"
+          >
+            Home
+          </a>
+           <a
+            href="#experience"
+            className="hover:text-black transition"
+          >
+            Experience
+          </a>
+
+          <a
+            href="#edits"
+            className="hover:text-black transition"
+          >
+            Edits
+          </a>
+
+         
+
+          <a
+            href="/veresume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition relative group overflow-hidden"
+            className="relative group overflow-hidden px-1 py-1"
           >
-            <span className="px-1 relative z-10 group-hover:text-white">
+
+            <span className="relative z-10 group-hover:text-white transition">
               Resume
             </span>
-            <span className="absolute left-0 bottom-0 w-full h-0.5 transition-all bg-gray-900 z-0 group-hover:h-full"></span>  
+
+            <span
+              className="absolute left-0 bottom-0 
+              w-full h-[1px] bg-[#d94d62]
+              transition-all duration-300
+              group-hover:h-full -z-0"
+            />
+
           </a>
+
         </div>
 
-        {/* Mobile Button */}
+        {/* MOBILE BUTTON */}
         <button
           className="md:hidden text-gray-700"
           onClick={() => setIsOpen(!isOpen)}
         >
-          ☰
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
+
       </div>
 
-      {/* Mobile Menu */}
-  {isOpen && (
-  <>
-    {/* Background overlay */}
-    <div 
-      className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
-      onClick={() => setIsOpen(false)}
-    ></div>
+      {/* MOBILE MENU */}
+      {isOpen && (
+        <>
+          {/* OVERLAY */}
+          <div
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+            onClick={() => setIsOpen(false)}
+          />
 
-    {/* Glass menu */}
-    <div className="fixed top-20 left-4 right-4 z-50">
-      <div className="flex flex-col items-center gap-6 py-6 text-gray-800 text-sm 
-      bg-white/30 backdrop-blur-xl border border-white/40 rounded-2xl shadow-2xl">
-        
-        <a href="#development" onClick={() => setIsOpen(false)}>Projects</a>
-        <a href="#dsa" onClick={() => setIsOpen(false)}>DSA</a>
-        <a href="#education" onClick={() => setIsOpen(false)}>Education</a>
-        <a href="#other" onClick={() => setIsOpen(false)}>Hobbies</a>
+          {/* MENU */}
+          <div className="fixed top-24 left-4 right-4 z-50">
 
-        <a 
-          href="/Resume-AmbrishChaurasiya.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => setIsOpen(false)}
-        >
-          Resume
-        </a>
-      </div>
-    </div>
-  </>
-)}
+            <div
+              className="relative overflow-hidden
+              flex flex-col items-center gap-8 py-8
+              bg-white/60 backdrop-blur-2xl
+              border border-white/40
+              rounded-3xl shadow-2xl"
+            >
+
+              {/* SCRIBBLE */}
+              <svg
+                className="absolute -right-10 -top-10 w-40 opacity-10"
+                viewBox="0 0 400 400"
+                fill="none"
+              >
+                <path
+                  d="M40 220C120 120 180 320 260 180C300 110 340 140 360 240"
+                  stroke="#d94d62"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeDasharray="10 14"
+                />
+              </svg>
+
+              <a
+                href="#home"
+                onClick={() => setIsOpen(false)}
+                className="text-gray-700 hover:text-black transition"
+              >
+                Home
+              </a>
+
+              <a
+                href="#edits"
+                onClick={() => setIsOpen(false)}
+                className="text-gray-700 hover:text-black transition"
+              >
+                Edits
+              </a>
+
+              <a
+                href="#experience"
+                onClick={() => setIsOpen(false)}
+                className="text-gray-700 hover:text-black transition"
+              >
+                Experience
+              </a>
+
+              <a
+                href="/Resume-AmbrishChaurasiya.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="text-gray-700 hover:text-black transition"
+              >
+                Resume
+              </a>
+
+            </div>
+
+          </div>
+        </>
+      )}
+
     </nav>
   )
 }
