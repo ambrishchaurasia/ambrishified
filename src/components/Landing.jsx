@@ -1,6 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
 import profile from "../assets/profile.png"
+import video from "../assets/EeSalaCupNamduu.mp4"
 
 const Landing = () => {
   return (
@@ -71,11 +72,10 @@ style={{
             />
 
             <a
-              href="mailto:ambrishchaurasiya.work@gmail.com"
+              href={video}
               className="text-xs tracking-widest text-gray-500 hover:text-yellow-400 transition duration-300 px-5 py-2"
             >
-              💡 let's create something
-            </a>
+A personal favorite edit ♡            </a>
           </div>
 
           <div className="text-center">
@@ -136,11 +136,10 @@ style={{
             />
 
             <a
-              href="mailto:ambrishchaurasiya.work@gmail.com"
+              href={video}
               className="text-sm text-gray-500 hover:text-yellow-400 transition duration-300 tracking-wide py-7 glow-animate"
             >
-              💡 let's create something
-            </a>
+A personal favorite edit ♡            </a>
           </div>
 
           {/* RIGHT */}
