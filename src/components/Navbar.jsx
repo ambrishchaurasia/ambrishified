@@ -32,7 +32,8 @@ const Navbar = () => {
           >
             Home
           </a>
-           <a
+
+          <a
             href="#experience"
             className="hover:text-black transition"
           >
@@ -45,8 +46,6 @@ const Navbar = () => {
           >
             Edits
           </a>
-
-         
 
           <a
             href="/veresume.pdf"
@@ -85,7 +84,7 @@ const Navbar = () => {
         <>
           {/* OVERLAY */}
           <div
-            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
             onClick={() => setIsOpen(false)}
           />
 
@@ -95,8 +94,8 @@ const Navbar = () => {
             <div
               className="relative overflow-hidden
               flex flex-col items-center gap-8 py-8
-              bg-white/60 backdrop-blur-2xl
-              border border-white/40
+              bg-white/95 backdrop-blur-2xl
+              border border-white/60
               rounded-3xl shadow-2xl"
             >
 
@@ -115,36 +114,40 @@ const Navbar = () => {
                 />
               </svg>
 
+              {/* HOME */}
               <a
                 href="#home"
                 onClick={() => setIsOpen(false)}
-                className="text-gray-700 hover:text-black transition"
+                className="text-gray-800 hover:text-black transition font-medium"
               >
                 Home
               </a>
 
-              <a
-                href="#edits"
-                onClick={() => setIsOpen(false)}
-                className="text-gray-700 hover:text-black transition"
-              >
-                Edits
-              </a>
-
+              {/* EXPERIENCE */}
               <a
                 href="#experience"
                 onClick={() => setIsOpen(false)}
-                className="text-gray-700 hover:text-black transition"
+                className="text-gray-800 hover:text-black transition font-medium"
               >
                 Experience
               </a>
 
+              {/* EDITS */}
+              <a
+                href="#edits"
+                onClick={() => setIsOpen(false)}
+                className="text-gray-800 hover:text-black transition font-medium"
+              >
+                Edits
+              </a>
+
+              {/* RESUME */}
               <a
                 href="/Resume-AmbrishChaurasiya.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
-                className="text-gray-700 hover:text-black transition"
+                className="text-gray-800 hover:text-black transition font-medium"
               >
                 Resume
               </a>
